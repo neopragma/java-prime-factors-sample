@@ -1,0 +1,153 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_9
+    targetCompatibility = JavaVersion.VERSION_1_9
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+    useJUnitPlatform() 
+} 
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter:5.6.1')
+    implementation 'org.jetbrains:annotations:15.0'
+}
+
+def fail1 = tasks.register("fail1", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step1.fail.*"
+    }
+}
+
+def pass1 = tasks.register("pass1", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step1.pass.*"
+    }
+}
+
+def fail2 = tasks.register("fail2", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step2.fail.*"
+    }
+}
+
+def pass2 = tasks.register("pass2", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step2.pass.*"
+    }
+}
+
+def refactored2 = tasks.register("refactored2", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step2.refactored.*"
+    }
+}
+
+def fail3 = tasks.register("fail3", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step3.fail.*"
+    }
+}
+
+def pass3 = tasks.register("pass3", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step3.pass.*"
+    }
+}
+
+def fail4 = tasks.register("fail4", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step4.fail.*"
+    }
+}
+
+def pass4 = tasks.register("pass4", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step4.pass.*"
+    }
+}
+
+def refactored4 = tasks.register("refactored4", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.refactored4.pass.*"
+    }
+}
+
+def fail5 = tasks.register("fail5", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step5.fail.*"
+    }
+}
+
+def pass5 = tasks.register("pass5", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step5.pass.*"
+    }
+}
+
+def fail6 = tasks.register("fail6", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step6.fail.*"
+    }
+}
+
+def pass6 = tasks.register("pass6", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step6.pass.*"
+    }
+}
+
+def fail7 = tasks.register("fail7", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step7.fail.*"
+    }
+}
+
+def pass7 = tasks.register("pass7", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.step7.pass.*"
+    }
+}
+
+def refactored7 = tasks.register("refactored7", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.refactored7.pass.*"
+    }
+}
+
+def finalversion = tasks.register("finalversion", Test) {
+    useJUnitPlatform()
+    filter {
+        includeTestsMatching "com.neopragma.primefactors.finalversion.*"
+    }
+}
+
+version = '1.2.1'
